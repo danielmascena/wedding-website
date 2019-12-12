@@ -1,0 +1,210 @@
+@charset "utf-8";
+
+:root {
+  --oceana: #bbd3d6;
+  --pink_salt: #fae3d9;
+  --sea_green: #61c0bf;
+  --bounty: #4bbcf4;
+  --rosada: #ffb6b9;
+  --color1: #6db5ca;
+  --color2: #b8d8e0;
+  --color3: #fcf5ef;
+  --color4: #ff7235;
+  --red: #f7444e;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: var(--color3);
+  width: 100vw;
+  overflow: hidden;
+}
+#main-container {
+  background-color: #fff;
+  flex-grow: 2;
+  height: 100vh;
+  overflow-y: scroll;
+
+  scroll-behavior: smooth;
+  /*margin-right: -2%;*/
+
+  /* Hide scrollbar for IE and Edge */
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+#main-container::-webkit-scrollbar {
+  display: none;
+}
+.section {
+  height: inherit;
+  border: dotted 1px;
+}
+#banner {
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: var(--color2);
+  /*transition: background-image ease 1s;*/
+  display: flex;
+  flex-direction: column;
+}
+#banner > h1,
+#banner > nav,
+#banner > section,
+#banner > footer {
+  position: relative;
+  border-width: 1px 0 0 0;
+  border-color: rgba(230, 232, 233, 0.2);
+  border-style: solid;
+}
+#banner > h1 {
+  flex-grow: 3;
+}
+#banner > nav {
+  order: -1;
+  flex-grow: 2;
+  padding: 0;
+  text-align: center;
+}
+#banner > section,
+#banner > footer {
+  flex-basis: 10%;
+}
+#banner > section {
+  background: rgba(0, 0, 0, 0.2);
+}
+#banner > *:before {
+  content: "";
+  position: absolute;
+  border-width: 0 1px 0;
+  border-color: rgba(230, 232, 233, 0.2);
+  border-style: solid;
+  height: 100%;
+  width: 40%;
+  left: 20%;
+}
+
+#title-banner {
+  font-family: "Tangerine", cursive;
+  font-weight: 300;
+  font-size: 6rem;
+  border-bottom: 2px solid;
+  padding-bottom: 30px;
+  position: relative;
+  padding-left: 20%;
+  margin: 0;
+  /* border-bottom-width: 0 */
+}
+/*
+#title-banner:before,
+#title-banner:after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  top: 25%;
+  border-right: 10px solid;
+  border-radius: 50%;
+}
+#title-banner:before {
+  margin-left: -5%;
+}
+#title-banner:after {
+  margin-left: 5%;
+}
+*/
+#navbar a {
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-right: 5%;
+  font-size: 0.9rem;
+}
+#wedding-date {
+  padding-left: 20%;
+}
+.heading {
+  font-family: "Amatic SC", cursive;
+  font-size: 3rem;
+  color: var(--red);
+}
+.section-presentation {
+  display: flex;
+}
+.presentation {
+  padding: 5%;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  word-spacing: 0.7rem;
+  transform: translateY(350px);
+  opacity: 0;
+  transition: all ease 1.5s;
+}
+.pictures {
+  width: 280px;
+  opacity: 0;
+}
+.church-location {
+}
+.anchor-navigation {
+  position: fixed;
+  top: 50%;
+  right: 5%;
+  width: 20px;
+  height: 100px;
+}
+.anchor-navigation a {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--red);
+  border-radius: 50%;
+}
+.main-footer {
+  background-color: var(--color4);
+}
+.animate {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color ease 0.5s;
+  color: #fff;
+}
+.animate .presentation {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animate .pictures {
+  transform: translateX(-100px);
+  opacity: 1;
+  transition: all 1s ease-out;
+}
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.loading:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  animation: spinning 0.5s infinite ease-out;
+}
+@keyframes spinning {
+  to {
+    transform: rotate(360deg);
+  }
+}

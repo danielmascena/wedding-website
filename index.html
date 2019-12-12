@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parcel Sandbox</title>
+    <link rel="preconnect" href="https://cdn.contentful.com" />
+    <link rel="preconnect" href="https://www.google.com/maps/" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC|Rouge+Script|Tangerine&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="theme-color" content="#ff7235" />
+  </head>
+
+  <body>
+    <!--[if IE]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <div hidden class="loading"></div>
+    <main id="main-container">
+      <header class="section" id="banner">
+        <h1 id="title-banner"></h1>
+        <nav id="navbar">
+          <a href="#">Home</a>
+          <a href="location.html">Location</a>
+          <a href="payment.html">Payment</a>
+          <a href="#">Contact</a>
+        </nav>
+        <section aria-hidden="true">
+          <time id="wedding-date"></time>
+        </section>
+        <footer aria-hidden="true"></footer>
+      </header>
+      <aside class="anchor-navigation">
+        <nav>
+          <a href="#banner" onclick="goToSection('banner')" tabindex="0"></a>
+          <a
+            href="#presentation"
+            onclick="goToSection('presentation')"
+            tabindex="0"
+          ></a>
+          <a></a>
+          <a></a>
+        </nav>
+      </aside>
+      <section class="section section-presentation" id="presentation">
+        <article>
+          <h1 class="heading">Hello</h1>
+          <p class="presentation"></p>
+        </article>
+        <aside>
+          <figure class="portrait">
+            <img class="pictures" />
+            <img class="pictures" />
+            <img class="pictures" />
+            <img class="pictures" />
+          </figure>
+        </aside>
+      </section>
+
+      <section class="section church-location">
+        <iframe
+          width="100%"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.8607199945445!2d-35.18676428454594!3d-5.875192959498564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b2ff33acb8d61d%3A0x4144f7fab46e1f9e!2sPar%C3%B3quia%20de%20Santa%20Rita%20de%20C%C3%A1ssia%20dos%20Imposs%C3%ADveis!5e0!3m2!1sen!2sbr!4v1574276652160!5m2!1sen!2sbr"
+          width="600"
+          height="450"
+          frameborder="0"
+          style="border:0;"
+          allowfullscreen=""
+        ></iframe>
+      </section>
+      <footer class="section main-footer">Copyright ©️</footer>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", _ => {
+        const mainContent = document.getElementById("main-container");
+        const sections = document.getElementsByClassName("section");
+        const animatePage = _ => {
+          var curPos = mainContent.scrollTop;
+          for (let section of sections) {
+            if (section.offsetTop - window.outerHeight / 2 <= curPos) {
+              section.classList.add("animate");
+            }
+          }
+          console.log(curPos);
+          /*
+				if (count === sections.length) {
+				  mainContent.removeEventListener("wheel", animatePage);
+				}
+				*/
+        };
+        mainContent.addEventListener("scroll", animatePage);
+      });
+    </script>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
