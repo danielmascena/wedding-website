@@ -132,10 +132,12 @@ body {
   font-size: 3rem;
   color: var(--red);
 }
-.section-presentation {
+.section-presentation,
+.info-extra {
   display: flex;
 }
-.presentation {
+.presentation,
+.infos {
   padding: 5%;
   line-height: 1.5;
   letter-spacing: 1px;
@@ -172,7 +174,8 @@ body {
   transition: background-color ease 0.5s;
   color: #fff;
 }
-.animate .presentation {
+.animate .presentation,
+.animate .infos {
   opacity: 1;
   transform: translateY(0);
 }

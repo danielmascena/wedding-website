@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Parcel Sandbox</title>
+    <meta name="description" content="" />
     <link rel="preconnect" href="https://cdn.contentful.com" />
     <link rel="preconnect" href="https://www.google.com/maps/" />
     <link
@@ -28,8 +29,8 @@
         <h1 id="title-banner"></h1>
         <nav id="navbar">
           <a href="#">Home</a>
-          <a href="location.html">Location</a>
-          <a href="payment.html">Payment</a>
+          <a href="#">Location</a>
+          <a href="#">Payment</a>
           <a href="#">Contact</a>
         </nav>
         <section aria-hidden="true">
@@ -58,8 +59,6 @@
           <figure class="portrait">
             <img class="pictures" />
             <img class="pictures" />
-            <img class="pictures" />
-            <img class="pictures" />
           </figure>
         </aside>
       </section>
@@ -75,30 +74,24 @@
           allowfullscreen=""
         ></iframe>
       </section>
+      <section class="section info-extra">
+        <article>
+          <h1></h1>
+          <p class="infos"></p>
+        </article>
+        <aside>
+          <figure class="portrait">
+            <img class="pictures" />
+            <img class="pictures" />
+          </figure>
+        </aside>
+      </section>
       <footer class="section main-footer">Copyright ©️</footer>
     </main>
     <script>
-      document.addEventListener("DOMContentLoaded", _ => {
-        const mainContent = document.getElementById("main-container");
-        const sections = document.getElementsByClassName("section");
-        const animatePage = _ => {
-          var curPos = mainContent.scrollTop;
-          for (let section of sections) {
-            if (section.offsetTop - window.outerHeight / 2 <= curPos) {
-              section.classList.add("animate");
-            }
-          }
-          console.log(curPos);
-          /*
-				if (count === sections.length) {
-				  mainContent.removeEventListener("wheel", animatePage);
-				}
-				*/
-        };
-        mainContent.addEventListener("scroll", animatePage);
-      });
+      
     </script>
 
-    <script src="src/index.js"></script>
+    <script async src="src/index.js"></script>
   </body>
 </html>
