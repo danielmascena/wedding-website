@@ -25,7 +25,7 @@
     <![endif]-->
     <div hidden class="loading"></div>
     <main id="main-container">
-      <header class="section" id="banner">
+      <header class="section banner" id="page-header">
         <h1 id="title-banner"></h1>
         <nav id="navbar">
           <a href="#">Home</a>
@@ -40,14 +40,21 @@
       </header>
       <aside class="anchor-navigation">
         <nav>
-          <a href="#banner" onclick="goToSection('banner')" tabindex="0"></a>
+          <a href="#page-header" onclick="goToSection('page-header')" tabindex="0"></a>
           <a
             href="#presentation"
             onclick="goToSection('presentation')"
             tabindex="0"
           ></a>
-          <a></a>
-          <a></a>
+          <a href="#church"
+          onclick="goToSection('church')"
+          tabindex="0"></a>
+          <a href="#extras"
+          onclick="goToSection('extras')"
+          tabindex="0"></a>
+          <a href="#page-footer"
+          onclick="goToSection('page-footer')"
+          tabindex="0"></a>
         </nav>
       </aside>
       <section class="section section-presentation" id="presentation">
@@ -63,7 +70,7 @@
         </aside>
       </section>
 
-      <section class="section church-location">
+      <section class="section church-location" id="church">
         <iframe
           width="100%"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.8607199945445!2d-35.18676428454594!3d-5.875192959498564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b2ff33acb8d61d%3A0x4144f7fab46e1f9e!2sPar%C3%B3quia%20de%20Santa%20Rita%20de%20C%C3%A1ssia%20dos%20Imposs%C3%ADveis!5e0!3m2!1sen!2sbr!4v1574276652160!5m2!1sen!2sbr"
@@ -74,7 +81,7 @@
           allowfullscreen=""
         ></iframe>
       </section>
-      <section class="section info-extra">
+      <section class="section info-extra" id="extras">
         <article>
           <h1></h1>
           <p class="infos"></p>
@@ -86,7 +93,7 @@
           </figure>
         </aside>
       </section>
-      <footer class="section main-footer">Copyright ©️</footer>
+      <footer class="section main-footer" id="page-footer">Copyright ©️</footer>
     </main>
     <script>
       
