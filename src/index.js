@@ -10,6 +10,7 @@ const dateElement = document.querySelector(".wedding-date");
 const presentation = document.querySelector(
   ".section-presentation .presentation"
 );
+const menu = document.querySelector('.navbar');
 const extra = document.querySelector(".info-extra .infos");
 const months = [
   "Janeiro",
@@ -37,6 +38,11 @@ const animateit = _ => {
   const sections = document.getElementsByClassName("section");
   const animatePage = _ => {
     var curPos = mainContent.scrollTop;
+    if (curPos > document.body.offsetHeight -30 /* menu height */ && menu.classList.contains('top-nav')) {
+      menu.classList.replace('top-nav', 'sidebar-nav');
+    } else if (curPos < document.body.offsetHeight -30 && menu.classList.contains('sidebar-nav')) {
+      menu.classList.replace('sidebar-nav', 'top-nav');
+    }
     for (let section of sections) {
       if (section.offsetTop - window.outerHeight / 2 <= curPos) {
         section.classList.add("animate");
