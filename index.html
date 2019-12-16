@@ -27,36 +27,29 @@
     <main id="main-container">
       <header class="section banner" id="page-header">
         <h1 id="title-banner"></h1>
-        <nav id="navbar">
-          <a href="#">Home</a>
-          <a href="#">Location</a>
-          <a href="#">Payment</a>
-          <a href="#">Contact</a>
-        </nav>
-        <section aria-hidden="true">
-          <time id="wedding-date"></time>
-        </section>
-        <footer aria-hidden="true"></footer>
+        <div aria-hidden="true"></div>
+        <div aria-hidden="true">
+          <time class="wedding-date"></time>
+        </div>
+        <div aria-hidden="true"></div>
       </header>
-      <aside class="anchor-navigation">
-        <nav>
-          <a href="#page-header" onclick="goToSection('page-header')" tabindex="0"></a>
+      <nav class="navbar top-nav">
+        <a href="topo" onclick="goToSection('page-header')" tabindex="0">Topo</a>
           <a
-            href="#presentation"
+            href="apresentacao"
             onclick="goToSection('presentation')"
             tabindex="0"
-          ></a>
-          <a href="#church"
+          >Apresentacao</a>
+          <a href="igreja"
           onclick="goToSection('church')"
-          tabindex="0"></a>
-          <a href="#extras"
+          tabindex="0">Igreja</a>
+          <a href="extras"
           onclick="goToSection('extras')"
-          tabindex="0"></a>
-          <a href="#page-footer"
+          tabindex="0">Extras</a>
+          <a href="rodape"
           onclick="goToSection('page-footer')"
-          tabindex="0"></a>
-        </nav>
-      </aside>
+          tabindex="0">Rodape</a>
+      </nav>
       <section class="section section-presentation" id="presentation">
         <article>
           <h1 class="heading">Hello</h1>

@@ -3,11 +3,10 @@ import "./styles.css";
 // main.js
 import fetchData from "./fetchData";
 
-const banner = document.getElementById("banner");
 const titleBanner = document.getElementById("title-banner");
 const loading = document.querySelector(".loading[hidden]");
 const images = document.getElementsByClassName("pictures");
-const dateElement = document.getElementById("wedding-date");
+const dateElement = document.querySelector(".wedding-date");
 const presentation = document.querySelector(
   ".section-presentation .presentation"
 );
@@ -60,7 +59,7 @@ fetchData(({ items, includes }) => {
   loadImages(
     includes.Asset.filter(asset => idImgPresentation.includes(asset.sys.id))
   );
-  banner.style.backgroundImage = `url('${includes.Asset[1].fields.file.url}')`;
+  titleBanner.parentElement.style.backgroundImage = `url('${includes.Asset[1].fields.file.url}')`;
   titleBanner.textContent = items[0].fields.blogText;
   presentation.textContent = items[0].fields.generalBlogText;
   extra.textContent = items[0].fields.generalBlogText;

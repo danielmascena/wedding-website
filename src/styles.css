@@ -1,16 +1,10 @@
 @charset "utf-8";
 
 :root {
-  --oceana: #bbd3d6;
-  --pink_salt: #fae3d9;
-  --sea_green: #61c0bf;
-  --bounty: #4bbcf4;
-  --rosada: #ffb6b9;
-  --color1: #6db5ca;
-  --color2: #b8d8e0;
-  --color3: #fcf5ef;
-  --color4: #ff7235;
-  --red: #f7444e;
+  --color1: #FFA45B;
+  --color2: #FFDA77;
+  --color3: #FBF6F0;
+  --color4: #AEE6E6;
 }
 * {
   box-sizing: border-box;
@@ -25,7 +19,7 @@ body {
   overflow: hidden;
 }
 #main-container {
-  background-color: #fff;
+  background-color: var(--color3);
   flex-grow: 2;
   height: 100vh;
   overflow-y: scroll;
@@ -44,7 +38,7 @@ body {
   height: inherit;
   border: dotted 1px;
 }
-#banner {
+.banner {
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -53,32 +47,28 @@ body {
   display: flex;
   flex-direction: column;
 }
-#banner > h1,
-#banner > nav,
-#banner > section,
-#banner > footer {
+.banner > h1,
+.banner > div {
   position: relative;
   border-width: 1px 0 0 0;
   border-color: rgba(230, 232, 233, 0.2);
   border-style: solid;
 }
-#banner > h1 {
+.banner > h1 {
   flex-grow: 3;
 }
-#banner > nav {
+.banner > div:first-of-type {
   order: -1;
   flex-grow: 2;
   padding: 0;
-  text-align: center;
 }
-#banner > section,
-#banner > footer {
+.banner > div {
   flex-basis: 10%;
 }
-#banner > section {
+.banner > div:nth-of-type(2) {
   background: rgba(0, 0, 0, 0.2);
 }
-#banner > *:before {
+.banner > *:before {
   content: "";
   position: absolute;
   border-width: 0 1px 0;
@@ -88,7 +78,6 @@ body {
   width: 40%;
   left: 20%;
 }
-
 #title-banner {
   font-family: "Tangerine", cursive;
   font-weight: 300;
@@ -98,33 +87,42 @@ body {
   position: relative;
   padding-left: 20%;
   margin: 0;
-  /* border-bottom-width: 0 */
+  border-bottom-width: 0
 }
-/*
-#title-banner:before,
-#title-banner:after {
-  content: "";
-  position: absolute;
-  height: 10px;
-  top: 25%;
-  border-right: 10px solid;
-  border-radius: 50%;
+.navbar {
+  position: fixed;
+  z-index: 1000;
 }
-#title-banner:before {
-  margin-left: -5%;
+.navbar a {
+  display: inline-block;
 }
-#title-banner:after {
-  margin-left: 5%;
+.top-nav {
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background-color: var(--color3);
 }
-*/
-#navbar a {
+.top-nav a {
   text-decoration: none;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-right: 5%;
   font-size: 0.9rem;
+  padding: 15px 0;
 }
-#wedding-date {
+.sidebar-nav {
+  top: 50%;
+  right: 5%;
+  width: 20px;
+  height: 100px;
+}
+.sidebar-nav a {
+  width: 10px;
+  height: 10px;
+  background-color: var(--red);
+  border-radius: 50%;
+}
+.wedding-date {
   padding-left: 20%;
 }
 .heading {
@@ -150,30 +148,11 @@ body {
   width: 280px;
   opacity: 0;
 }
-.church-location {
-}
-.anchor-navigation {
-  position: fixed;
-  top: 50%;
-  right: 5%;
-  width: 20px;
-  height: 100px;
-}
-.anchor-navigation a {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: var(--red);
-  border-radius: 50%;
-}
+
 .main-footer {
-  background-color: var(--color4);
+  background-color: var(--color1);
 }
-.animate {
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: background-color ease 0.5s;
-  color: #fff;
-}
+
 .animate .presentation,
 .animate .infos {
   opacity: 1;
