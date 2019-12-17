@@ -2,6 +2,7 @@
 
 :root {
   --color1: #FFA45B;
+  --color11: #F9957F;
   --color2: #FFDA77;
   --color3: #FBF6F0;
   --color4: #AEE6E6;
@@ -91,7 +92,7 @@ body {
 }
 .navbar {
   position: fixed;
-  z-index: 1000;
+  z-index: 999;
 }
 .navbar a {
   display: inline-block;
@@ -153,7 +154,7 @@ body {
   line-height: 1.5;
   letter-spacing: 1px;
   word-spacing: 0.7rem;
-  transform: translateY(350px);
+  transform: translateY(250px);
   opacity: 0;
   transition: all ease 1.5s;
 }
@@ -163,18 +164,20 @@ body {
 }
 
 .main-footer {
-  background-color: var(--color1);
+  background-image: linear-gradient(to right bottom, #F2F5D0, #F9957F 80%); 
 }
 
 .animate .presentation,
 .animate .infos {
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 1.5s ease-in, transform 1s ease-out;
 }
 .animate .pictures {
   transform: translateX(-100px);
   opacity: 1;
-  transition: all 1s ease-out;
+  transition: opacity 1.5s ease-in, transform 1s ease-out;
+  transition-delay: 500ms;
 }
 .loading {
   position: fixed;
