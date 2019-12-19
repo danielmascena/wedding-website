@@ -6,6 +6,8 @@
   --color2: #FFDA77;
   --color3: #FBF6F0;
   --color4: #AEE6E6;
+  --text-color: #000;
+  --bg-color: #fff;
 }
 * {
   box-sizing: border-box;
@@ -93,6 +95,10 @@ body {
 .navbar {
   position: fixed;
   z-index: 999;
+}
+.navbar ul {padding: 0}
+.navbar li {
+  list-style-type: none;
 }
 .navbar a {
   display: inline-block;
