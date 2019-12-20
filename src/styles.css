@@ -151,8 +151,16 @@ body {
   transition: opacity 500ms ease-in-out;
 }
 @media (min-width: 700px) {
-  .hambuger-menu  {
+  .hambuger-menu,
+  .hambuger-icon  {
     display: none;
+  }
+  .top-nav {
+    width: 100%;
+    transition: none;
+  }
+  .top-nav .nav-link {
+    opacity: 1;
   }
   .top-nav li {
     display: inline-block;
