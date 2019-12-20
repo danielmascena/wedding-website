@@ -37,11 +37,15 @@ const animateit = _ => {
   const mainContent = document.getElementById("main-container");
   const sections = document.getElementsByClassName("section");
   const animatePage = _ => {
-    var curPos = mainContent.scrollTop;
-    if (curPos > document.body.offsetHeight -30 /* menu height */ && menu.classList.contains('top-nav')) {
-      menu.classList.replace('top-nav', 'sidebar-nav');
-    } else if (curPos < document.body.offsetHeight -30 && menu.classList.contains('sidebar-nav')) {
-      menu.classList.replace('sidebar-nav', 'top-nav');
+    const curPos = mainContent.scrollTop;
+    const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    if (width > 700) {
+      if (curPos > document.body.offsetHeight - 30 /* menu height */ && menu.classList.contains('top-nav')) {
+        menu.classList.replace('top-nav', 'sidebar-nav');
+      } else if (curPos < document.body.offsetHeight - 30 && menu.classList.contains('sidebar-nav')) {
+        menu.classList.replace('sidebar-nav', 'top-nav');
+      }
     }
     for (let section of sections) {
       if (section.offsetTop - window.outerHeight / 2 <= curPos) {
