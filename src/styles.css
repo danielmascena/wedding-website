@@ -92,55 +92,96 @@ body {
   margin: 0;
   border-bottom-width: 0
 }
+.hambuger-mobile,
+.hambuger-icon {
+  top: 10px;
+  left: 10px;
+  position: fixed;
+  width: 15px;
+  height: 15px;
+}
+.hambuger-icon {
+  z-index: 998;
+  transition: transform 500ms ease;
+}
+.hambuger-mobile {
+  z-index: 999;
+  opacity: 0;
+}
+.hambuger-mobile:checked ~ .hambuger-icon {
+  transform: rotate(400deg);
+}
+.hambuger-mobile:checked ~ .top-nav {
+  width: 80%;
+  transition: width 1s ease-out;
+}
+.hambuger-mobile:checked ~ .top-nav .nav-link {
+  opacity: 1;
+  transition: opacity 500ms linear 250ms;
+}
 .navbar {
   position: fixed;
-  z-index: 999;
+  z-index: 997;
 }
-.navbar ul {padding: 0}
+.navbar ul {
+  padding: 0;
+}
 .navbar li {
   list-style-type: none;
 }
-.navbar a {
+.navbar .nav-link {
   display: inline-block;
 }
 .top-nav {
   top: 0;
-  width: 100%;
+  width: 0;
   text-align: center;
   background-color: var(--color3);
   box-shadow: 0 0 10px 5px rgba(0,0,0,0.3);
+  transition: width 500ms ease-in;
 }
-.top-nav a {
+.top-nav .nav-link {
   text-decoration: none;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-right: 5%;
   font-size: 0.9rem;
   padding: 15px 0;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
 }
-.sidebar-nav {
-  top: calc(50% - 65px);
-  right: 5%;
-  width: 20px;
-  height: 130px;
-}
-.sidebar-nav a {
-  width: 10px;
-  height: 10px;
-  margin: 10px 0;
-  background-color: var(--color4);
-  border-radius: 50%;
-  font-size: 0px;
-  box-shadow: 0 0 5px 2px rgba(0,0,0,.5);
-  position: relative;
-  
-}
-.sidebar-nav a:hover:before {
-  content: attr(href);
-  font-size: .8rem;
-  position: absolute;
-  top: -20px;
-  left: 0;
+@media (min-width: 700px) {
+  .hambuger-menu  {
+    display: none;
+  }
+  .top-nav li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  .sidebar-nav {
+    top: calc(50% - 65px);
+    right: 5%;
+    width: 20px;
+    height: 130px;
+  }
+  .sidebar-nav .nav-link {
+    width: 10px;
+    height: 10px;
+    margin: 10px 0;
+    background-color: var(--color4);
+    border-radius: 50%;
+    font-size: 0px;
+    box-shadow: 0 0 5px 2px rgba(0,0,0,.5);
+    position: relative;
+    
+  }
+  .sidebar-nav .nav-link:hover:before {
+    content: attr(href);
+    font-size: .8rem;
+    position: absolute;
+    top: -20px;
+    left: 0;
+  }
 }
 .wedding-date {
   padding-left: 20%;
