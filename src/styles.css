@@ -183,7 +183,6 @@ body {
     font-size: 0px;
     box-shadow: 0 0 5px 2px rgba(0,0,0,.5);
     position: relative;
-    
   }
   .sidebar-nav .nav-link:hover:before {
     content: attr(href);
