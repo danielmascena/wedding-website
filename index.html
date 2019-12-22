@@ -17,7 +17,7 @@
     <meta name="theme-color" content="#ff7235" />
   </head>
 
-  <body>
+  <body onload="javascript:console.log('images loaded')">
     <!--[if IE]>
       <p class="browserupgrade">
         You are using an <strong>outdated</strong> browser. Please
@@ -31,7 +31,7 @@
         <h1 id="title-banner"></h1>
         <div aria-hidden="true"></div>
         <div aria-hidden="true">
-          <time class="wedding-date"></time>
+          <time class="time-left"></time>
         </div>
         <div aria-hidden="true"></div>
       </header>
@@ -73,7 +73,7 @@
       <section class="section section-presentation" id="presentation">
         <article>
           <h1 class="heading">Hello</h1>
-          <p class="presentation"></p>
+          <p class="presentation"><time datetime="" class="wedding-date"></time></p>
         </article>
         <aside>
           <figure class="portrait">

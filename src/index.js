@@ -7,6 +7,7 @@ const titleBanner = document.getElementById("title-banner");
 const loading = document.querySelector(".loading[hidden]");
 const images = document.getElementsByClassName("pictures");
 const dateElement = document.querySelector(".wedding-date");
+const timeLeft = document.querySelector('.time-left');
 const presentation = document.querySelector(
   ".section-presentation .presentation"
 );
@@ -61,7 +62,12 @@ if (document.readyState === 'loading') {
 } else {
   animateit();
 }
-
+const remainTime = (new Date(2020,0,25,9) - new Date()) / 86400000;
+const remainDays = parseInt(remainTime, 10);
+/**
+ * same as (new Date(2020,0,25,9) - new Date()) / 1000 / 60 / 60 / 24
+ */
+timeLeft.textContent = `contagem regressiva: faltando ${remainDays} dias e ${(remainTime - remainDays) / 1000 / 60 / 60}`;
 fetchData(({ items, includes }) => {
   const idImgPresentation = items[0].fields.imagesLandingPage.map(
     id => id.sys.id
@@ -71,7 +77,7 @@ fetchData(({ items, includes }) => {
   );
   titleBanner.parentElement.style.backgroundImage = `url('${includes.Asset[1].fields.file.url}')`;
   titleBanner.textContent = items[0].fields.blogText;
-  presentation.textContent = items[0].fields.generalBlogText;
+  presentation.prepend(items[0].fields.generalBlogText);
   extra.textContent = items[0].fields.generalBlogText;
   var dateStr = items[0].fields.dateOfWedding;
   var date = new Date(dateStr);
