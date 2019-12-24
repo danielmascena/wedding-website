@@ -233,7 +233,10 @@ body {
   transform: translateX(-100px);
   opacity: 1;
   transition: opacity 1.5s ease-in, transform 1s ease-out;
-  transition-delay: 500ms;
+  transition-delay: 300ms;
+}
+.animate .pictures:nth-of-type(2n) {
+  transition-delay: 600ms;
 }
 .loading {
   position: fixed;
