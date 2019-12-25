@@ -169,6 +169,7 @@ body {
   }
   .top-nav .nav-link {
     opacity: 1;
+    visibility: visible;
   }
   .top-nav li {
     display: inline-block;
