@@ -62,17 +62,24 @@ if (document.readyState === 'loading') {
 } else {
   animateit();
 }
-const remainTime = (new Date(2020,0,25,9).getTime() - Date.now()) / 86400000;
-const remainDays = parseInt(remainTime, 10);
-const remainHours = (remainTime - remainDays) / 1000 / 60 / 60;
-const remainMinutes = parseInt((remainHours - parseInt(remainHours, 10)) / 1000 / 60, 10);
-/**
- * same as (new Date(2020,0,25,9) - new Date()) / 1000 / 60 / 60 / 24
- */
-timeLeft.innerHTML = `contagem regressiva: 
+const time = new Date(2020,0,25,9).getTime();
+setInterval(() => {
+  const remainTime = (time - Date.now()) / 86400000;
+  const remainDays = parseInt(remainTime, 10);
+  const remainHours = (remainTime - remainDays) / 1000 / 60 / 60;
+  const remainMinutes = parseInt((remainHours - parseInt(remainHours, 10)) / 1000 / 60, 10);
+  /**
+   * same as (new Date(2020,0,25,9) - new Date()) / 1000 / 60 / 60 / 24
+   */
+  timeLeft.innerHTML = `contagem regressiva: 
   faltando <time>${remainDays}</time> dias e <datetime="PT2H30M">
   ${parseInt(remainHours, 10)}h ${remainMinutes}m</time>
-`;
+  `;
+  console.log(`contagem regressiva: 
+  faltando <time>${remainDays}</time> dias e <datetime="PT2H30M">
+  ${parseInt(remainHours, 10)}h ${remainMinutes}m</time>
+  `,remainTime);
+}, 1000);
 fetchData(({ items, includes }) => {
   const idImgPresentation = items[0].fields.imagesLandingPage.map(
     id => id.sys.id

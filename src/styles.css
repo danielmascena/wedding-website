@@ -20,6 +20,7 @@ body {
   background-color: var(--color3);
   width: 100vw;
   overflow: hidden;
+  font-size: 30px;
 }
 #main-container {
   background-color: var(--color3);
@@ -94,11 +95,12 @@ body {
 }
 .hambuger-mobile,
 .hambuger-icon {
-  top: 10px;
-  left: 10px;
+  top: 2vh;
+  left: 2vw;
   position: fixed;
-  width: 15px;
-  height: 15px;
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
 }
 .hambuger-icon {
   z-index: 998;
@@ -116,6 +118,7 @@ body {
   transition: width 1s ease-out;
 }
 .hambuger-mobile:checked ~ .top-nav .nav-link {
+  visibility: visible;
   opacity: 1;
   transition: opacity 500ms linear 250ms;
 }
@@ -146,12 +149,15 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-right: 5%;
-  font-size: 0.9rem;
-  padding: 15px 0;
+  visibility: hidden;
   opacity: 0;
-  transition: opacity 500ms ease-in-out;
+  padding: 15px 0;
+  transition: opacity 500ms ease-in-out, visibility 0s linear 500ms;
 }
 @media (min-width: 700px) {
+  body {
+    font-size: 16px;
+  }
   .hambuger-menu,
   .hambuger-icon  {
     display: none;
