@@ -199,8 +199,36 @@ body {
     left: 0;
   }
 }
-.wedding-date {
+#clock-deadline {
   padding-left: 20%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 60%;
+  justify-content: center;
+  text-align: center;
+  color: whitesmoke;
+}
+.countdown-col {
+  display: inline-grid;
+  text-shadow: 0 0 5px black;
+}
+.countdown-numbers {
+  display: inline-block;
+  background-color: #000;
+  font-size: 3rem;
+  position: relative;
+  border-radius: 5px;
+  margin: 5%;
+}
+.countdown-numbers:after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  background-color: whitesmoke;
+  top: 50%;
+  left: 0;
+  width: 100%;
 }
 .heading {
   font-family: "Amatic SC", cursive;
@@ -225,11 +253,9 @@ body {
   width: 280px;
   opacity: 0;
 }
-
 .main-footer {
   background-image: linear-gradient(to right bottom, #F2F5D0, #F9957F 80%); 
 }
-
 .animate .presentation,
 .animate .infos {
   opacity: 1;
