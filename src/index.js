@@ -86,3 +86,5 @@ window.goToSection = id => {
   window.event.preventDefault();
   document.getElementById(id).scrollIntoView();
 };
+
+//document.documentElement.style.setProperty('--page-bg-color', this.checked ? 'black' : 'whitesmoke');
