@@ -39,7 +39,7 @@ body {
   display: none;
 }
 .section {
-  height: inherit;
+  min-height: 100%;
   border: dotted 1px;
 }
 .banner {
@@ -202,6 +202,35 @@ body {
     padding-left: 20%;
     width: 60%;
   }
+  .section-presentation,
+  .info-extra {
+    display: flex;
+  }
+  .pictures {
+    transform: translateX(40%);
+    opacity: 0;
+  }
+  .presentation,
+  .infos {
+    transform: translateY(250px);
+    opacity: 0;
+    transition: all ease 1.5s;
+  }
+  .animate .presentation,
+  .animate .infos {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1.5s ease-in, transform 1s ease-out;
+  }
+  .animate .pictures {
+    transform: translateX(0);
+    opacity: 1;
+    transition: opacity 1.5s ease-in, transform 1s ease-out;
+    transition-delay: 300ms;
+  }
+  .animate .pictures:nth-of-type(2n) {
+    transition-delay: 600ms;
+  }
 }
 #clock-deadline {
   display: flex;
@@ -237,41 +266,28 @@ body {
   font-size: 3rem;
   color: var(--red);
 }
-.section-presentation,
-.info-extra {
-  display: flex;
-}
 .presentation,
 .infos {
   padding: 5%;
   line-height: 1.5;
   letter-spacing: 1px;
   word-spacing: 0.7rem;
-  transform: translateY(250px);
-  opacity: 0;
-  transition: all ease 1.5s;
 }
 .pictures {
-  width: 280px;
-  opacity: 0;
+  width: 100%;
 }
 .main-footer {
-  background-image: linear-gradient(to right bottom, #F2F5D0, #F9957F 80%); 
-}
-.animate .presentation,
-.animate .infos {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 1.5s ease-in, transform 1s ease-out;
-}
-.animate .pictures {
-  transform: translateX(-100px);
-  opacity: 1;
-  transition: opacity 1.5s ease-in, transform 1s ease-out;
-  transition-delay: 300ms;
-}
-.animate .pictures:nth-of-type(2n) {
-  transition-delay: 600ms;
+  background-image: linear-gradient(to right bottom, #F2F5D0, #F9957F 80%);
+  height: 40%;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-end;
+  white-space: pre-line;
+  color: snow;
+  text-shadow: 1px 1px 4px #000, -1px -1px 2px #fff, 
+    0 0 5px var(--color4), 2px 2px 3px #f00, 
+    0 0 5px var(--color1), -2px -2px 4px green,
+    0 0 5px #000;
 }
 .loading {
   position: fixed;

@@ -41,21 +41,29 @@ const animateit = _ => {
   const animatePage = _ => {
     const curPos = mainContent.scrollTop;
     const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    const height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    //const height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     if (width > 700) {
       if (curPos > document.body.offsetHeight - 30 /* menu height */ && menu.classList.contains('top-nav')) {
         menu.classList.replace('top-nav', 'sidebar-nav');
       } else if (curPos < document.body.offsetHeight - 30 && menu.classList.contains('sidebar-nav')) {
         menu.classList.replace('sidebar-nav', 'top-nav');
       }
-    }
-    for (let section of sections) {
-      if (section.offsetTop - window.outerHeight / 2 <= curPos) {
-        section.classList.add("animate");
+      for (let section of sections) {
+        if (section.offsetTop - window.outerHeight / 2 <= curPos) {
+          section.classList.add("animate");
+        }
       }
     }
   };
+  const switchMenu = _ => {
+    const curPos = mainContent.scrollTop;
+    const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    if (width > 700) {
+      
+    }
+  }
   mainContent.addEventListener("scroll", animatePage);
+  window.addEventListener('resize', switchMenu);
 };
 
 if (document.readyState === 'loading') {
