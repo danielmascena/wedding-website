@@ -117,79 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/styles.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"config.json":[function(require,module,exports) {
+})({"config.json":[function(require,module,exports) {
 module.exports = {
   "env": {
     "CONTENTFUL_SPACE_ID": "glv5vvf55jiq",
@@ -265,12 +193,163 @@ var fetchData = function fetchData(callback, loading) {
 
 var _default = fetchData;
 exports.default = _default;
-},{"../config.json":"config.json"}],"src/index.js":[function(require,module,exports) {
+},{"../config.json":"config.json"}],"src/dateHelper.js":[function(require,module,exports) {
 "use strict";
 
-require("./styles.css");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+/*
+ * using the solution on the article:
+ * https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/
+ */
+var _default = function _default(targetDate) {
+  //var updateClock;
+  var clock = document.getElementById('clock-deadline');
+  var daysSpan = clock.querySelector('.days');
+  var hoursSpan = clock.querySelector('.hours');
+  var minutesSpan = clock.querySelector('.minutes');
+  var secondsSpan = clock.querySelector('.seconds');
+  var endtime = 'January 25 2020 09:00:00 GMT-0300';
+  /* for a endpoint to provide the endtime. 
+  fetch('https://worldtimeapi.org/api/timezone/America/Fortaleza')
+      .then(data => data.json())
+      .then(json => { 
+          updateClock = function (endtime) {
+              return _ => {
+                  var t = getTimeRemaining(endtime);
+                  daysSpan.innerHTML = t.days;
+                  hoursSpan.innerHTML = t.hours;
+                  minutesSpan.innerHTML = t.minutes;
+                  secondsSpan.innerHTML = t.seconds;
+                  
+                  if(t.total<=0){
+                      clearInterval(timeinterval);
+                  }
+              }
+          }(json.datetime);
+            
+          updateClock(); // run function once at first to avoid delay
+          var timeinterval = setInterval(updateClock,1000);
+      })
+      .catch(error => console.error(error));
+  */
+
+  function getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date());
+    var seconds = Math.floor(t / 1000 % 60);
+    var minutes = Math.floor(t / 1000 / 60 % 60);
+    var hours = Math.floor(t / (1000 * 60 * 60) % 24);
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+      'total': t,
+      'days': days,
+      'hours': hours,
+      'minutes': minutes,
+      'seconds': seconds
+    };
+  }
+
+  function updateClock() {
+    var t = getTimeRemaining(endtime);
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = t.hours;
+    minutesSpan.innerHTML = t.minutes;
+    secondsSpan.innerHTML = t.seconds;
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock(); // run function once at first to avoid delay
+
+  var timeinterval = setInterval(updateClock, 1000);
+};
+
+exports.default = _default;
+},{}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/styles.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/index.js":[function(require,module,exports) {
+"use strict";
 
 var _fetchData = _interopRequireDefault(require("./fetchData"));
+
+var _dateHelper = _interopRequireDefault(require("./dateHelper"));
+
+require("./styles.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -279,6 +358,7 @@ var titleBanner = document.getElementById("title-banner");
 var loading = document.querySelector(".loading[hidden]");
 var images = document.getElementsByClassName("pictures");
 var dateElement = document.querySelector(".wedding-date");
+var timeLeft = document.querySelector('.time-left');
 var presentation = document.querySelector(".section-presentation .presentation");
 var menu = document.querySelector('.navbar');
 var extra = document.querySelector(".info-extra .infos");
@@ -318,8 +398,7 @@ var animateit = function animateit(_) {
 
   var animatePage = function animatePage(_) {
     var curPos = mainContent.scrollTop;
-    var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0); //const height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
     if (width > 700) {
       if (curPos > document.body.offsetHeight - 30
@@ -329,37 +408,45 @@ var animateit = function animateit(_) {
       } else if (curPos < document.body.offsetHeight - 30 && menu.classList.contains('sidebar-nav')) {
         menu.classList.replace('sidebar-nav', 'top-nav');
       }
-    }
 
-    var _iteratorNormalCompletion2 = true;
-    var _didIteratorError2 = false;
-    var _iteratorError2 = undefined;
+      var _iteratorNormalCompletion2 = true;
+      var _didIteratorError2 = false;
+      var _iteratorError2 = undefined;
 
-    try {
-      for (var _iterator2 = sections[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-        var section = _step2.value;
-
-        if (section.offsetTop - window.outerHeight / 2 <= curPos) {
-          section.classList.add("animate");
-        }
-      }
-    } catch (err) {
-      _didIteratorError2 = true;
-      _iteratorError2 = err;
-    } finally {
       try {
-        if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
-          _iterator2.return();
+        for (var _iterator2 = sections[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+          var section = _step2.value;
+
+          if (section.offsetTop - window.outerHeight / 2 <= curPos) {
+            section.classList.add("animate");
+          }
         }
+      } catch (err) {
+        _didIteratorError2 = true;
+        _iteratorError2 = err;
       } finally {
-        if (_didIteratorError2) {
-          throw _iteratorError2;
+        try {
+          if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
+            _iterator2.return();
+          }
+        } finally {
+          if (_didIteratorError2) {
+            throw _iteratorError2;
+          }
         }
       }
     }
   };
 
+  var switchMenu = function switchMenu(_) {
+    var curPos = mainContent.scrollTop;
+    var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+    if (width > 700) {}
+  };
+
   mainContent.addEventListener("scroll", animatePage);
+  window.addEventListener('resize', switchMenu);
 };
 
 if (document.readyState === 'loading') {
@@ -368,6 +455,7 @@ if (document.readyState === 'loading') {
   animateit();
 }
 
+(0, _dateHelper.default)();
 (0, _fetchData.default)(function (_ref) {
   var items = _ref.items,
       includes = _ref.includes;
@@ -379,7 +467,7 @@ if (document.readyState === 'loading') {
   }));
   titleBanner.parentElement.style.backgroundImage = "url('".concat(includes.Asset[1].fields.file.url, "')");
   titleBanner.textContent = items[0].fields.blogText;
-  presentation.textContent = items[0].fields.generalBlogText;
+  presentation.prepend(items[0].fields.generalBlogText);
   extra.textContent = items[0].fields.generalBlogText;
   var dateStr = items[0].fields.dateOfWedding;
   var date = new Date(dateStr);
@@ -390,8 +478,8 @@ if (document.readyState === 'loading') {
 window.goToSection = function (id) {
   window.event.preventDefault();
   document.getElementById(id).scrollIntoView();
-};
-},{"./styles.css":"src/styles.css","./fetchData":"src/fetchData.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+}; //document.documentElement.style.setProperty('--page-bg-color', this.checked ? 'black' : 'whitesmoke');
+},{"./fetchData":"src/fetchData.js","./dateHelper":"src/dateHelper.js","./styles.css":"src/styles.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -419,7 +507,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50395" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49854" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

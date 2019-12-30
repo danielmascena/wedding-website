@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Parcel Sandbox</title>
-    <meta name="description" content="Este é um site de casamento" />
+    <title>Daniel & Paula</title>
+    <meta name="description" content="This is my wedding website" />
     <meta name="keywords" content="HTML5,CSS3,JavaScript">
     <meta name="author" content="Daniel Mascena">
     <link rel="preconnect" href="https://cdn.contentful.com" />
@@ -31,7 +31,20 @@
         <h1 id="title-banner"></h1>
         <div aria-hidden="true"></div>
         <div aria-hidden="true">
-          <time class="time-left"></time>
+          <div id="clock-deadline">
+            <div class="countdown-col">
+              Dias <span class="countdown-numbers days"></span>
+            </div>
+            <div class="countdown-col">
+              Horas <span class="countdown-numbers hours"></span>
+            </div>
+            <div class="countdown-col">
+              Minutos <span class="countdown-numbers minutes"></span>
+            </div>
+            <div class="countdown-col">
+              Segundos <span class="countdown-numbers seconds"></span>
+            </div>
+          </div>
         </div>
         <div aria-hidden="true"></div>
       </header>
@@ -46,11 +59,11 @@
           </li>
           <li>
             <a
-              href="apresentacao"
+              href="bemvindo"
               class="nav-link" 
               onclick="goToSection('presentation')"
               tabindex="0"
-              >Apresentacao</a
+              >Bemvindo</a
             >
           </li>
           <li>
@@ -109,12 +122,11 @@
           </figure>
         </aside>
       </section>
-      <footer class="section main-footer" id="page-footer">
-        <p>Contato: +55 84 981718181</p>
+      <footer class="main-footer" id="page-footer">
         <p>
-          ©️ Copyright <time>2019</time> webmaster &amp; webdesigner: Daniel Mascena.
-          <br>
-          <span>Done with &lt;3 using Web Standards</span>
+          ©️ Copyright <time>2019</time> webmaster &amp; webdesigner: <strong>Daniel Mascena</strong>.
+          
+          <em>Done with &lt;3 using Web Standards</em>
         </p>
       </footer>
     </main>
