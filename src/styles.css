@@ -49,6 +49,7 @@ body {
   background-color: var(--color2);
   /*transition: background-image ease 1s;*/
   display: flex;
+  height: inherit;
   flex-direction: column;
 }
 .banner > h1,
