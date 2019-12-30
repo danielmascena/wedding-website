@@ -38,7 +38,8 @@ const loadImages = assets => {
 const animateit = _ => {
   const mainContent = document.getElementById("main-container");
   const sections = document.getElementsByClassName("section");
-  const animatePage = _ => {
+
+  const animatePage = () => {
     const curPos = mainContent.scrollTop;
     const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     //const height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -55,11 +56,11 @@ const animateit = _ => {
       }
     }
   };
-  const switchMenu = _ => {
+  const switchMenu = () => {
     const curPos = mainContent.scrollTop;
     const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    if (width > 700) {
-      
+    if (width < 700) {
+      menu.classList.replace("sidebar-nav", "top-nav");
     }
   }
   mainContent.addEventListener("scroll", animatePage);

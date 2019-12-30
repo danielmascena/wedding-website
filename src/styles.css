@@ -155,6 +155,11 @@ body {
   padding: 15px 0;
   transition: opacity 500ms ease-in-out, visibility 0s linear 500ms;
 }
+.section-presentation,
+.info-extra {
+    padding: 5%;
+}
+
 @media (min-width: 700px) {
   body {
     font-size: 16px;
@@ -269,7 +274,6 @@ body {
 }
 .presentation,
 .infos {
-  padding: 5%;
   line-height: 1.5;
   letter-spacing: 1px;
   word-spacing: 0.7rem;
