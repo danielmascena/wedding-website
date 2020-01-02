@@ -9,6 +9,7 @@
   --text-color: #000;
   --bg-color: #fff;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -22,6 +23,7 @@ body {
   overflow: hidden;
   font-size: 25px;
 }
+
 #main-container {
   background-color: var(--color3);
   flex-grow: 2;
@@ -35,45 +37,53 @@ body {
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
 }
+
 #main-container::-webkit-scrollbar {
   display: none;
 }
+
 .section {
   min-height: 100%;
   border: dotted 1px;
 }
+
 .banner {
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-color: var(--color2);
-  /*transition: background-image ease 1s;*/
   display: flex;
   height: inherit;
   flex-direction: column;
 }
-.banner > h1,
-.banner > div {
+
+.banner>h1,
+.banner>div {
   position: relative;
   border-width: 1px 0 0 0;
   border-color: rgba(230, 232, 233, 0.2);
   border-style: solid;
 }
-.banner > h1 {
+
+.banner>h1 {
   flex-grow: 3;
 }
-.banner > div:first-of-type {
+
+.banner>div:first-of-type {
   order: -1;
   flex-grow: 2;
   padding: 0;
 }
-.banner > div {
+
+.banner>div {
   flex-basis: 10%;
 }
-.banner > div:nth-of-type(2) {
+
+.banner>div:nth-of-type(2) {
   background: rgba(0, 0, 0, 0.2);
 }
-.banner > *:before {
+
+.banner>*:before {
   content: "";
   position: absolute;
   border-width: 0 1px 0;
@@ -83,6 +93,7 @@ body {
   width: 40%;
   left: 20%;
 }
+
 #title-banner {
   font-family: "Tangerine", cursive;
   font-weight: 300;
@@ -94,6 +105,7 @@ body {
   margin: 0;
   border-bottom-width: 0
 }
+
 .hambuger-mobile,
 .hambuger-icon {
   top: 2vh;
@@ -103,48 +115,59 @@ body {
   height: 2rem;
   margin: 0;
 }
+
 .hambuger-icon {
   z-index: 998;
   transition: transform 500ms ease;
 }
+
 .hambuger-mobile {
   z-index: 999;
   opacity: 0;
 }
-.hambuger-mobile:checked ~ .hambuger-icon {
+
+.hambuger-mobile:checked~.hambuger-icon {
   transform: rotate(400deg);
 }
-.hambuger-mobile:checked ~ .top-nav {
+
+.hambuger-mobile:checked~.top-nav {
   width: 80%;
   transition: width 1s ease-out;
 }
-.hambuger-mobile:checked ~ .top-nav .nav-link {
+
+.hambuger-mobile:checked~.top-nav .nav-link {
   visibility: visible;
   opacity: 1;
   transition: opacity 500ms linear 250ms;
 }
+
 .navbar {
   position: fixed;
   z-index: 997;
 }
+
 .navbar ul {
   padding: 0;
 }
+
 .navbar li {
   list-style-type: none;
 }
+
 .navbar .nav-link {
   display: inline-block;
 }
+
 .top-nav {
   top: 0;
   width: 0;
   text-align: center;
   background-color: var(--color3);
-  box-shadow: 0 0 10px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
   transition: width 500ms ease-in;
   height: 100vh;
 }
+
 .top-nav .nav-link {
   text-decoration: none;
   letter-spacing: 2px;
@@ -155,38 +178,45 @@ body {
   padding: 15px 0;
   transition: opacity 500ms ease-in-out, visibility 0s linear 500ms;
 }
+
 .section-presentation,
 .info-extra {
-    padding: 5%;
+  padding: 5%;
 }
 
 @media (min-width: 700px) {
   body {
     font-size: 16px;
   }
+
   .hambuger-menu,
-  .hambuger-icon  {
+  .hambuger-icon {
     display: none;
   }
+
   .top-nav {
     width: 100%;
     transition: none;
     height: unset;
   }
+
   .top-nav .nav-link {
     opacity: 1;
     visibility: visible;
   }
+
   .top-nav li {
     display: inline-block;
     margin: 0 10px;
   }
+
   .sidebar-nav {
     top: calc(50% - 65px);
     right: 5%;
     width: 20px;
     height: 130px;
   }
+
   .sidebar-nav .nav-link {
     width: 10px;
     height: 10px;
@@ -194,9 +224,10 @@ body {
     background-color: var(--color4);
     border-radius: 50%;
     font-size: 0px;
-    box-shadow: 0 0 5px 2px rgba(0,0,0,.5);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
     position: relative;
   }
+
   .sidebar-nav .nav-link:hover:before {
     content: attr(href);
     font-size: .8rem;
@@ -204,40 +235,54 @@ body {
     top: -20px;
     left: 0;
   }
+
   #clock-deadline {
     padding-left: 20%;
     width: 60%;
   }
+
   .section-presentation,
   .info-extra {
     display: flex;
   }
+
   .pictures {
     transform: translateX(40%);
     opacity: 0;
   }
+
   .presentation,
   .infos {
     transform: translateY(250px);
     opacity: 0;
     transition: all ease 1.5s;
   }
+
+  .portrait {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
   .animate .presentation,
   .animate .infos {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 1.5s ease-in, transform 1s ease-out;
   }
+
   .animate .pictures {
     transform: translateX(0);
     opacity: 1;
     transition: opacity 1.5s ease-in, transform 1s ease-out;
     transition-delay: 300ms;
   }
+
   .animate .pictures:nth-of-type(2n) {
     transition-delay: 600ms;
   }
 }
+
 #clock-deadline {
   display: flex;
   align-items: center;
@@ -246,10 +291,12 @@ body {
   text-align: center;
   color: whitesmoke;
 }
+
 .countdown-col {
   display: inline-grid;
   text-shadow: 0 0 5px black;
 }
+
 .countdown-numbers {
   display: inline-block;
   background-color: #000;
@@ -258,6 +305,7 @@ body {
   border-radius: 5px;
   margin: 5%;
 }
+
 .countdown-numbers:after {
   content: '';
   position: absolute;
@@ -267,20 +315,24 @@ body {
   left: 0;
   width: 100%;
 }
+
 .heading {
   font-family: "Amatic SC", cursive;
   font-size: 3rem;
   color: var(--red);
 }
+
 .presentation,
 .infos {
   line-height: 1.5;
   letter-spacing: 1px;
   word-spacing: 0.7rem;
 }
+
 .pictures {
   width: 100%;
 }
+
 .main-footer {
   background-image: linear-gradient(to right bottom, #F2F5D0, #F9957F 80%);
   height: 40%;
@@ -289,11 +341,12 @@ body {
   align-items: flex-end;
   white-space: pre-line;
   color: snow;
-  text-shadow: 1px 1px 4px #000, -1px -1px 2px #fff, 
-    0 0 5px var(--color4), 2px 2px 3px #f00, 
+  text-shadow: 1px 1px 4px #000, -1px -1px 2px #fff,
+    0 0 5px var(--color4), 2px 2px 3px #f00,
     0 0 5px var(--color1), -2px -2px 4px green,
     0 0 5px #000;
 }
+
 .loading {
   position: fixed;
   top: 0;
@@ -303,6 +356,7 @@ body {
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 .loading:after {
   content: "";
   position: absolute;
@@ -316,6 +370,7 @@ body {
   border-bottom: 2px solid;
   animation: spinning 0.5s infinite ease-out;
 }
+
 @keyframes spinning {
   to {
     transform: rotate(360deg);

@@ -30,20 +30,6 @@ const fetchData = (callback, loading) => {
       requestAnimationFrame(_ => loading.setAttribute("hidden", "true"));
   }
   xhr.send();
-  /*
-    var client = contentful.createClient({
-      space: "glv5vvf55jiq",
-      accessToken: "l8M3azNCTjms7SXHHdli8KkIgOOddch8yXDoIHShnpE"
-    });
-    client.getEntry("958ve596xfbAQfzzOfjCD").then(function(entry) {
-      // logs the entry metadata
-      console.log(entry.sys);
-  
-      // logs the field with ID title
-      console.log(entry.fields);
-      banner.src = entry.fields.photos.fields.file.url;
-    });
-    */
 };
 
 export default fetchData;
