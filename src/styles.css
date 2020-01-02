@@ -52,24 +52,21 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-color: var(--color2);
+  background-position: 20%;
   display: flex;
   height: inherit;
   flex-direction: column;
 }
 
-.banner>h1,
-.banner>div {
+.banner > #title-banner,
+.banner > div {
   position: relative;
   border-width: 1px 0 0 0;
   border-color: rgba(230, 232, 233, 0.2);
   border-style: solid;
 }
 
-.banner>h1 {
-  flex-grow: 3;
-}
-
-.banner>div:first-of-type {
+.banner > div:first-of-type {
   order: -1;
   flex-grow: 2;
   padding: 0;
@@ -102,6 +99,9 @@ body {
   padding-bottom: 30px;
   position: relative;
   padding-left: 20%;
+  color: whitesmoke;
+  text-shadow: 0 0 5px #000, 1px 1px 4px var(--color1), -1px -1px 3px var(--color2);
+  flex-grow: 3;
   margin: 0;
   border-bottom-width: 0
 }
@@ -189,11 +189,13 @@ body {
     font-size: 16px;
   }
 
+  .banner {
+    background-position: right 35% bottom 45%;
+  }
   .hambuger-menu,
   .hambuger-icon {
     display: none;
   }
-
   .top-nav {
     width: 100%;
     transition: none;
