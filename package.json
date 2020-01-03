@@ -10,6 +10,7 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "7.2.0",
+    "cssnano": "^4.1.10",
     "parcel-bundler": "^1.6.1"
   },
   "keywords": []

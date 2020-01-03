@@ -25,7 +25,7 @@
     <![endif]-->
   <div hidden class="loading"></div>
   <main id="main-container">
-    <header class="section banner" id="page-header">
+    <header class="banner" id="page-header">
       <h1 id="title-banner">Daniel &amp; Paula</h1>
       <div aria-hidden="true"></div>
       <div aria-hidden="true">
@@ -54,7 +54,7 @@
           <a href="topo" class="nav-link" onclick="goToSection('page-header')" tabindex="0">Topo</a>
         </li>
         <li>
-          <a href="bemvindo" class="nav-link" onclick="goToSection('presentation')" tabindex="0">Bemvindo</a>
+          <a href="bemvindo" class="nav-link" onclick="goToSection('welcome')" tabindex="0">Bemvindo</a>
         </li>
         <li>
           <a href="igreja" class="nav-link" onclick="goToSection('church')" tabindex="0">Igreja</a>
@@ -67,43 +67,107 @@
         </li>
       </ul>
     </nav>
-    <section class="section section-presentation" id="presentation">
-      <article>
-        <h1 class="heading">Bem vindos</h1>
-        <p class="presentation"><time class="wedding-date" datetime="">25 de Janeiro</time></p>
+    <section class="section section-presentation" id="welcome">
+      <article class="section-content">
+        <div class="content-text">
+          <h1 class="content-text__heading">Bem-vindos</h1>
+          <p class="content-text__paragraph">
+            Querido convidado, seja bem-vindo ao nosso site de casamento. Deixamos aqui todas as informações importantes
+            para que esse dia seja especial para você como será para nós. Esperamos você lá. Enquanto isso, veja as
+            fotos
+            de nossa história. Também ficaremos super felizes em ler uma mensagem sua sobre nós!”
+          </p>
+        </div>
+        <div>
+          <figure class="portrait">
+            <img class="pictures" src="/public/images/d&p0.jpg" />
+          </figure>
+        </div>
       </article>
-      <aside>
-        <figure class="portrait">
-          <img class="pictures" src="/public/images/d&p0.jpg" />
-          <img class="pictures" src="public/images/onca.jpg" />
-        </figure>
+    </section>
+    <section class="section section-presentation">
+      <article class="section-content">
+        <div class="content-text">
+          <h1 class="content-text__heading">Alma Gêmea</h1>
+          <p class="content-text__paragraph">
+            Você consegue imaginar a felicidade de ter conhecido a sua metade da alma? A nossa é tão grande que
+            transborda e
+            queremos estar com pessoas incríveis como você para celebrar. Venha ver a confirmação desse amor em um dia
+            inesquecível.
+          </p>
+        </div>
+        <div>
+          <figure class="portrait">
+            <img class="pictures" src="public/images/onca.jpg" />
+          </figure>
+        </div>
+      </article>
+    </section>
+    <section class="church-location" id="church">
+      <h1 class="location-heading">A Igreja</h1>
+      <aside class="church-map">
+        <iframe width="100%"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.8607199945445!2d-35.18676428454594!3d-5.875192959498564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b2ff33acb8d61d%3A0x4144f7fab46e1f9e!2sPar%C3%B3quia%20de%20Santa%20Rita%20de%20C%C3%A1ssia%20dos%20Imposs%C3%ADveis!5e0!3m2!1sen!2sbr!4v1574276652160!5m2!1sen!2sbr"
+          width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
       </aside>
     </section>
-
-    <section class="section church-location" id="church">
-      <iframe width="100%"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.8607199945445!2d-35.18676428454594!3d-5.875192959498564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b2ff33acb8d61d%3A0x4144f7fab46e1f9e!2sPar%C3%B3quia%20de%20Santa%20Rita%20de%20C%C3%A1ssia%20dos%20Imposs%C3%ADveis!5e0!3m2!1sen!2sbr!4v1574276652160!5m2!1sen!2sbr"
-        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-      http://ritadosimpossiveis.com.br
-      https://www.facebook.com/paroquia.santaritacassiaimpossiveis
-      https://twitter.com/ritadosimpossiv
-    </section>
-    <section class="section info-extra" id="extras">
-      <article>
-        <h1></h1>
-        <p class="infos"></p>
+    <section class="section section-presentation" id="extras">
+      <article class="section-content">
+        <div class="content-text">
+          <h1 class="content-text__heading">Celebre o Amor</h1>
+          <p class="content-text__paragraph">Para se encontrar a felicidade é necessário que se tenha um amor, uma
+            estrutura familiar e
+            bons amigos. Nós já encontramos o amor, temos a melhor família e aqui esperamos nossos grandes amigos,
+            vocês!
+          </p>
+        </div>
+        <div class="content-image">
+          <figure>
+            <img class="pictures" src="public/images/caracol.jpg" />
+          </figure>
+        </div>
       </article>
-      <aside>
-        <figure class="portrait">
-          <img class="pictures" src="public/images/pn.jpg" />
-          <img class="pictures" src="public/images/batizado.JPG" />
-        </figure>
-      </aside>
+    </section>
+    <section class="section section-presentation">
+      <article class="section-content">
+        <div class="content-text">
+          <h1 class="content-text__heading">O Dia</h1>
+          <p class="content-text__paragraph">
+            Preparados para a melhor festa de suas vidas? Já temos o mais importante: o amor. Agora só vai faltar vocês!
+            Venha com um sapato confortável, um par animado e animação de sobra. No nosso dia não faltará motivos para
+            celebrar a vida e o amor #savethedate <time class="wedding-date" datetime="">25 de Janeiro de 2020</time>.
+          </p>
+        </div>
+        <div class="content-image">
+          <figure>
+            <img class="pictures" src="public/images/batizado_md.jpeg" />
+          </figure>
+        </div>
+      </article>
     </section>
     <footer class="main-footer" id="page-footer">
-      <div>
-        webmaster &amp; webdesigner: <strong>Daniel Mascena</strong>.
-
+      <h3>Links Úteis</h3>
+      <section class="list-links">
+        <div>
+          <p>Igreja</p>
+          <ul class="list-contact">
+            <li><a class="list-contact__link" href="http://ritadosimpossiveis.com.br">PSR website</a></li>
+            <li><a class="list-contact__link"
+                href="https://www.facebook.com/paroquia.santaritacassiaimpossiveis">Facebook</a></li>
+            <li><a class="list-contact__link" href="https://twitter.com/ritadosimpossiv">Twitter</a></li>
+          </ul>
+        </div>
+        <div>
+          <p>Recepção</p>
+          <ul class="list-contact">
+            <li><a class="list-contact__link" href="http://www.fogoechama.com.br">F&C website</a></li>
+            <li><a class="list-contact__link" href="https://www.facebook.com/fogoechama/">Facebook</a></li>
+            <li><a class="list-contact__link" href="https://www.instagram.com/fogoechama/">Instagram</a></li>
+          </ul>
+        </div>
+      </section>
+      <div class="copyright">
+        webmaster &amp; webdesigner: <strong><a href="mailto:danielmascena@gmail.com">Daniel Mascena</a></strong>.
         <em>Done with &lt;3 using Web Standards</em>
       </div>
     </footer>
