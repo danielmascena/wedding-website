@@ -20,6 +20,7 @@ const months = [
   "Novembro",
   "Dezembro"
 ];
+history.pushState(0, "casamento", "casamento");
 const animateit = _ => {
   const mainContent = document.getElementById("main-container");
   const sections = document.getElementsByClassName("section");
@@ -27,7 +28,7 @@ const animateit = _ => {
   let numColors = 1;
   const animatePage = () => {
     const curPos = mainContent.scrollTop;
-    if (curPos < document.body.offsetHeight){
+    if (curPos < document.body.offsetHeight) {
       banner.style.backgroundColor = `var(--color${numColors<=5 ? numColors++ : (numColors=1)})`;
     }
     const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
