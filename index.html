@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#ff7235" />
 </head>
 
-<body onload="javascript:console.log('images loaded')">
+<body onload="javascript:document.body.classList.add('loaded')">
   <!--[if IE]>
       <p class="browserupgrade">
         You are using an <strong>outdated</strong> browser. Please
@@ -26,7 +26,7 @@
   <div hidden class="loading"></div>
   <main id="main-container">
     <header class="section banner" id="page-header">
-      <h1 id="title-banner"></h1>
+      <h1 id="title-banner">Daniel &amp; Paula</h1>
       <div aria-hidden="true"></div>
       <div aria-hidden="true">
         <div id="clock-deadline">
@@ -69,13 +69,13 @@
     </nav>
     <section class="section section-presentation" id="presentation">
       <article>
-        <h1 class="heading">Hello</h1>
-        <p class="presentation"><time class="wedding-date"></time></p>
+        <h1 class="heading">Bem vindos</h1>
+        <p class="presentation"><time class="wedding-date" datetime="">25 de Janeiro</time></p>
       </article>
       <aside>
         <figure class="portrait">
-          <img class="pictures" />
-          <img class="pictures" />
+          <img class="pictures" src="/public/images/d&p.png" />
+          <img class="pictures" src="public/images/onca.jpg" />
         </figure>
       </aside>
     </section>
@@ -95,7 +95,7 @@
       </article>
       <aside>
         <figure class="portrait">
-          <img class="pictures" />
+          <img class="pictures" src="public/images/pn.jpg" />
           <img class="pictures" src="public/images/batizado.JPG" />
         </figure>
       </aside>

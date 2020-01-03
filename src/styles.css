@@ -2,7 +2,7 @@
 
 :root {
   --color1: #FFA45B;
-  --color11: #F9957F;
+  --color5: #F9957F;
   --color2: #FFDA77;
   --color3: #FBF6F0;
   --color4: #AEE6E6;
@@ -48,11 +48,13 @@ body {
 }
 
 .banner {
+  background-image: url("../public/images/d&p-capa.png");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-color: var(--color2);
-  background-position: 20%;
+  background-position: 45%;
+  transition: background-color 500ms ease-in-out;
   display: flex;
   height: inherit;
   flex-direction: column;
@@ -103,9 +105,15 @@ body {
   text-shadow: 0 0 5px #000, 1px 1px 4px var(--color1), -1px -1px 3px var(--color2);
   flex-grow: 3;
   margin: 0;
-  border-bottom-width: 0
+  border-bottom-width: 0;
+  transform: translateY(40px);
+  opacity: 0;
 }
-
+.loaded #title-banner {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 1s ease;
+}
 .hambuger-mobile,
 .hambuger-icon {
   top: 2vh;
@@ -292,6 +300,13 @@ body {
   justify-content: center;
   text-align: center;
   color: whitesmoke;
+  opacity: 0;
+  transform: translateX(-40px);
+}
+.loaded #clock-deadline {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 1s ease 500ms;
 }
 
 .countdown-col {
