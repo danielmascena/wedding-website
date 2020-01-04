@@ -276,14 +276,12 @@ require("./styles.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // main.js
-var loading = document.querySelector(".loading[hidden]");
-var timeLeft = document.querySelector('.time-left');
+var mobileMenuBtn = document.getElementById("mobile-menu-btn");
 var menu = document.querySelector('.navbar');
-var months = ["Janeiro", "Feveiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-history.pushState(0, "casamento", "casamento");
+history.pushState(0, "casamento", "#casamento");
 
 var animateit = function animateit(_) {
-  var mainContent = document.getElementById("main-container");
+  var mainContent = document.getElementById("casamento");
   var sections = document.getElementsByClassName("section");
   var banner = document.querySelector(".banner");
   var numColors = 1;
@@ -336,7 +334,6 @@ var animateit = function animateit(_) {
   };
 
   var switchMenu = function switchMenu() {
-    var curPos = mainContent.scrollTop;
     var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
     if (width < 700) {
@@ -359,6 +356,7 @@ if (document.readyState === 'loading') {
 window.goToSection = function (id) {
   window.event.preventDefault();
   document.getElementById(id).scrollIntoView();
+  mobileMenuBtn.checked = false;
 }; //document.documentElement.style.setProperty('--page-bg-color', this.checked ? 'black' : 'whitesmoke');
 },{"./dateHelper":"src/dateHelper.js","./styles.css":"src/styles.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -388,7 +386,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49560" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49642" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

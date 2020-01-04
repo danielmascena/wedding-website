@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Casamento :: Daniel & Paula</title>
   <meta name="description" content="This is a personal website for my wedding" />
-  <meta name="keywords" content="HTML5,CSS3,JavaScript">
+  <meta name="keywords" content="HTML5, CSS3, JavaScript, wedding website">
   <meta name="author" content="Daniel Mascena">
   <!--
     <base href="/" />
@@ -27,7 +27,7 @@
       </p>
     <![endif]-->
   <div hidden class="loading"></div>
-  <main id="main-container">
+  <main id="casamento">
     <header class="banner" id="page-header">
       <h1 id="title-banner">Daniel &amp; Paula</h1>
       <div aria-hidden="true"></div>
@@ -49,8 +49,8 @@
       </div>
       <div aria-hidden="true"></div>
     </header>
-    <input class="hambuger-mobile" aria-hidden="true" type="checkbox" />
-    <div class="hambuger-icon" aria-hidden="true">+</div>
+    <input class="hambuger-mobile" id="mobile-menu-btn" aria-hidden="true" type="checkbox" />
+    <div class="hambuger-icon" aria-hidden="true"></div>
     <nav class="navbar top-nav">
       <ul>
         <li>
@@ -148,6 +148,52 @@
         </div>
       </article>
     </section>
+    <section class="section section-gifts">
+      <div>
+        <h1 class="content-text__heading">Lista de Presentes</h1>
+        <p>
+          Estamos muito felizes em compartilhar com vocês nosso casamento. 
+          Alguns convidados tem perguntado sobre a lista de presentes, como os noivos já vivem juntos a 5 anos
+          e tem que precisam, pensamos em outra forma de expressar o sentimento de presentear. 
+          Dessa forma, resolvemos aceitar uma pequena contribuição na forma de presente,
+          que será utilizada no custeio do nosso casamento. O valor fica a critério de cada convidado, pois para nós, o mais importante
+          é compartilharmos esse grande dia com todos vocês. No entanto, conforme alguns tem nos pedido uma <em>sugestão</em> de contribuição, 
+          definimos o valor de R$150,00 para quem assim desejar. Estamos muito agradecidos e felizes com a generosidade de todos. 
+        </p>
+        <p>A recepção sera no Fogo & Chama, e contará com o cardapio e <em>buffet</em> do proprio restaurante. Também estamos providenciando um mini espaço kids com um cuidadora contratada,
+           para que todos possam aproveitar a festa com tranquilidade.</p>
+        <table border="1">
+          <caption>Dados Bancários</caption>
+            <thead>
+              <tr>
+                <th>Banco</th>
+                <th>Agência</th>
+                <th>Conta Corrente</th>
+                <th>Titular</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Banco do Brasil</td>
+                <td>3396-0</td>
+                <td>1.552-0</td>
+                <td>Daniel Augusto de Abreu Mascena</td>
+              </tr>
+              <tr>
+                <td>Caixa Econômica Federal</td>
+                <td>0033</td>
+                <td>358850</td>
+                <td>Daniel Augusto de Abreu Mascena</td>
+              </tr>
+            </tbody>
+        </table>
+        <p>
+          <q>A alma generosa engordará e o que regar também será regado</q>.Provérbios 11:25
+        </p>
+      </div>
+
+
+    </section>
     <footer class="main-footer" id="page-footer">
       <h3>Links Úteis</h3>
       <section class="list-links">
@@ -170,19 +216,14 @@
         </div>
       </section>
       <p class="copyright">
-        &COPY; <a href="https://github.com/danielmascena/wedding-website/">Website source code</a> 2020<br>
-        Webdesigner &amp; Webmaster - <a href="mailto:danielmascena@gmail.com"><strong>Daniel Mascena</strong></a>.
-        &nbsp;&nbsp;&nbsp;<code style="font-style: normal; text-shadow: none">Made with ♥️ w/ Web Standards</code>
+        Webdesigner &amp; Webmaster - <a href="mailto:danielmascena@gmail.com" style="margin-right: 2rem"><strong>Daniel Mascena</strong></a>
+        &COPY; 2020 <a href="https://github.com/danielmascena/wedding-website/">Website source code.</a>
+      </p>
+      <p>
+        <code style="font-style: normal; text-shadow: none">Made with ♥️ using Web Standards</code>
       </p>
     </footer>
   </main>
-  <script>
-    /*
-    document.addEventListener("readystatechange", ()=> {
-      if (document.readyState === "interactive") document.body.classList.add('loaded');
-    });
-    */
-  </script>
   <script async src="src/index.js"></script>
 </body>
 

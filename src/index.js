@@ -3,26 +3,12 @@ import dateHelper from "./dateHelper";
 
 import "./styles.css";
 
-const loading = document.querySelector(".loading[hidden]");
-const timeLeft = document.querySelector('.time-left');
+const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 const menu = document.querySelector('.navbar');
-const months = [
-  "Janeiro",
-  "Feveiro",
-  "Março",
-  "Abril",
-  "Maio",
-  "Junho",
-  "Julho",
-  "Agosto",
-  "Setembro",
-  "Outubro",
-  "Novembro",
-  "Dezembro"
-];
-history.pushState(0, "casamento", "casamento");
+history.pushState(0, "casamento", "#casamento");
+
 const animateit = _ => {
-  const mainContent = document.getElementById("main-container");
+  const mainContent = document.getElementById("casamento");
   const sections = document.getElementsByClassName("section");
   const banner = document.querySelector(".banner");
   let numColors = 1;
@@ -46,7 +32,6 @@ const animateit = _ => {
     }
   };
   const switchMenu = () => {
-    const curPos = mainContent.scrollTop;
     const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     if (width < 700) {
       menu.classList.replace("sidebar-nav", "top-nav");
@@ -66,6 +51,7 @@ dateHelper();
 window.goToSection = id => {
   window.event.preventDefault();
   document.getElementById(id).scrollIntoView();
+  mobileMenuBtn.checked = false;
 };
 
 //document.documentElement.style.setProperty('--page-bg-color', this.checked ? 'black' : 'whitesmoke');
