@@ -80,7 +80,6 @@ body {
 
 .banner>div:first-of-type {
   order: -1;
-  flex-grow: 2;
   padding: 0;
 }
 
@@ -211,7 +210,9 @@ body {
   .banner {
     background-position: right 35% bottom 45%;
   }
-
+  .banner>div:first-of-type {
+    flex-grow: 2;
+  }
   .hambuger-menu,
   .hambuger-icon {
     display: none;
@@ -286,23 +287,8 @@ body {
     margin-bottom: -5px;
   }
 
-  .location-heading {
-    font-size: 4rem;
-    padding: 2rem;
-  }
-
-  .list-contact {
-    list-style-type: none;
-  }
-
   .list-contact li {
     padding: 1rem;
-  }
-
-  .list-contact__link {
-    color: navy;
-    text-decoration: none;
-    transition: background-color 300ms ease-in;
   }
 
   .list-contact__link:hover {
@@ -315,7 +301,8 @@ body {
     transition: all ease 1.5s;
   }
 
-  .content-text__heading {
+  .content-text__heading,
+  .location-church__heading {
     font-size: 6rem;
   }
 
@@ -383,12 +370,14 @@ body {
   width: 100%;
 }
 
-.content-text__heading {
+.content-text__heading,
+.location-church__heading {
   font-size: 4rem;
-}
-
-[class$="heading"] {
   font-family: "Amatic SC", cursive;
+  text-decoration: overline;
+}
+.location-church__heading {
+  padding-left: 5%;
 }
 
 .content-text__paragraph {
@@ -420,7 +409,15 @@ body {
   justify-content: space-around;
   width: 100vw;
 }
+.list-contact {
+  list-style-type: none;
+}
 
+.list-contact__link {
+  color: navy;
+  text-decoration: none;
+  transition: background-color 300ms ease-in;
+}
 .copyright {
   font-size: .9rem;
   /*white-space: pre-line;*/
