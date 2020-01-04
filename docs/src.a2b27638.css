@@ -261,10 +261,8 @@ body {
   }
 
   .sidebar-nav {
-    top: calc(50% - 65px);
+    top: calc(50% - 117px);
     right: 5%;
-    width: 20px;
-    height: 130px;
   }
 
   .sidebar-nav .nav-link {
@@ -328,7 +326,8 @@ body {
   }
 
   .content-text__heading,
-  .location-church__heading {
+  .location-church__heading,
+  .content-gift__heading {
     font-size: 6rem;
   }
 
@@ -400,17 +399,19 @@ body {
 }
 
 .content-text__heading,
-.location-church__heading {
-  font-size: 4rem;
+.location-church__heading,
+.content-gift__heading {
   font-family: "Amatic SC", cursive;
   text-decoration: overline;
+  font-size: 4rem;
 }
+
 .location-church__heading {
   padding-left: 5%;
 }
 
 .content-text__paragraph {
-  line-height: 2.5;
+  line-height: 2;
   letter-spacing: 1px;
   word-spacing: 0.3rem;
   margin: 10% 0;
@@ -421,7 +422,10 @@ body {
   border-radius: 15px;
   box-shadow: 0px 0px 10px -2px #000;
 }
-
+.content-gift {
+  padding: 1rem;
+  text-align: justify;
+}
 .main-footer {
   background-image: linear-gradient(to right bottom, #F2F5D0, #F9957F 80%);
   min-height: 40%;
