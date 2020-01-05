@@ -175,12 +175,12 @@ body {
 }
 
 
-.hambuger-mobile:checked~.top-nav {
+.hambuger-mobile:checked ~ .top-nav {
   width: 80%;
   transition: width 1s ease-out;
 }
 
-.hambuger-mobile:checked~.top-nav .nav-link {
+.hambuger-mobile:checked ~ .top-nav .nav-link {
   visibility: visible;
   opacity: 1;
   transition: opacity 500ms linear 250ms;
@@ -214,13 +214,15 @@ body {
 }
 
 .top-nav .nav-link {
+  opacity: 0;
   text-decoration: none;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-right: 5%;
   visibility: hidden;
-  opacity: 0;
   padding: 15px 0;
+}
+.loaded .nav-link {
   transition: opacity 500ms ease-in-out, visibility 0s linear 500ms;
 }
 
