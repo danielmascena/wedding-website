@@ -33,11 +33,11 @@ body {
   scroll-behavior: smooth;
   /*margin-right: -2%;*/
 
-  /* Hide scrollbar for IE and Edge */
+  /* Hide scrollbar for IE and Firefox */
   -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
 }
-
+/* Hide scrollbar for Chromium and Safari */
 #casamento::-webkit-scrollbar {
   display: none;
 }
