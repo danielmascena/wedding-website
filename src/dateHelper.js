@@ -9,7 +9,7 @@ export default targetDate => {
     var hoursSpan = clock.querySelector('.hours');
     var minutesSpan = clock.querySelector('.minutes');
     var secondsSpan = clock.querySelector('.seconds');
-    var endtime = 'January 25 2020 09:00:00 GMT-0300';
+    var endtime = 'January 25 2030 09:00:00 GMT-0300';
     
     /* for a endpoint to provide the endtime. 
     fetch('https://worldtimeapi.org/api/timezone/America/Fortaleza')
